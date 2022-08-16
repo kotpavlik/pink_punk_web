@@ -1,0 +1,7 @@
+@import "mixins_app/mixins";
+
+.bg_general_image {
+  height: 100vh;
+  width: 100vw;
+  @include bg_screen(cover,no-repeat,fixed,center ,relative);
+}

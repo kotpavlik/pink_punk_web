@@ -1,0 +1,73 @@
+.navigation_flex{
+  width: 100vw;
+  display: flex;
+  justify-content:space-between;
+  font-size: 20px;
+  .navigate_page{
+    padding: 0 20px;
+    display: flex;
+    flex-direction: row;
+    .link_wrapper{
+      position: relative;
+      margin: 0 10px;
+      text-align: center;
+      a{
+        .logo_pink_punk{
+          position: absolute;
+          top: -4px;
+          width: 100px;
+          margin-right: 10px;
+        }
+      }
+      &:first-child{
+        min-width: 100px;
+      }
+    }
+  }
+  .navigate_user{
+    padding: 0 20px;
+    a{
+      padding: 0 10px;
+    }
+  }
+}
+
+@media screen and ( max-width: 800px) {
+  .navigation_flex{
+    .navigate_page{
+      display: none;
+    }
+    .navigate_user{
+      display: none;
+    }
+  }
+  .navigation_flex_burger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 0 0 0;
+    height: 100vh;
+    width: 100%;
+    font-size: 30px;
+    text-transform: uppercase;
+    .navigate_page{
+      display: flex;
+      width: 100%;
+      height: 100%;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      .link_wrapper{
+        a{
+          font-size: 2.5rem;
+          margin: 20px 0;
+          color: #fff;
+        }
+        &:first-child{
+         display: none;
+        }
+      }
+    }
+  }
+}

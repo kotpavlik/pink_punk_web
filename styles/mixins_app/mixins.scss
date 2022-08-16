@@ -1,0 +1,9 @@
+
+
+@mixin bg_screen($backgroundSize,$backgroundRepeat,$backgroundAttachment,$backgroundPosition,$position){
+  background-size: $backgroundSize;
+  background-repeat: $backgroundRepeat;
+  background-attachment: $backgroundAttachment;
+  background-position: $backgroundPosition;
+  position: $position;
+}
