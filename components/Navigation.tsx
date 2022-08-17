@@ -2,16 +2,11 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image'
 import style from '../styles/navigation.module.scss'
-import searchLogo from '../public/header_icons/loupe-search-svgrepo-com.svg'
-import searchLogoWhite from '../public/header_icons/search_white.svg'
-import userLogo from '../public/header_icons/user-svgrepo-com.svg'
-import userLogoWhite from '../public/header_icons/user_logo_white.svg'
-import shopping_basket from '../public/header_icons/basket-svgrepo-com.svg'
-import shopping_basket_white from '../public/header_icons/basket_white.svg'
-import heart_like from '../public/header_icons/heart-peace-svgrepo-com.svg'
-import heart_like_white from '../public/header_icons/heart_white.svg'
+import searchLogo from '../public/header_icons/search.svg'
+import userLogo from '../public/header_icons/user.svg'
+import shopping_basket from '../public/header_icons/basket.svg'
+import heart_like from '../public/header_icons/heart.svg'
 import pink_punk_black from '../public/header_icons/pink_punk_black.svg'
-import pink_punk_white from '../public/header_icons/pink_punk_white.svg'
 
 type NavigationPropsType = {
     burger: boolean

@@ -4,11 +4,11 @@ import Head from 'next/head';
 import style from '../styles/mainLayout.module.scss'
 import {Navigation} from './Navigation';
 import Image from 'next/image';
-import searchLogo from '../public/header_icons/loupe-search-svgrepo-com.svg';
+import searchLogo from '../public/header_icons/search.svg';
 import searchLogoWhite from '../public/header_icons/search_white.svg'
-import userLogo from '../public/header_icons/user-svgrepo-com.svg';
-import userLogoWhite from '../public/header_icons/user_logo_white.svg'
-import shopping_basket from '../public/header_icons/basket-svgrepo-com.svg';
+import userLogo from '../public/header_icons/user.svg';
+import userLogoWhite from '../public/header_icons/user_white.svg'
+import shopping_basket from '../public/header_icons/basket.svg';
 import shopping_basket_white from '../public/header_icons/basket_white.svg'
 import pink_punk_white from '../public/header_icons/pink_punk_white.svg';
 import pink_punk_black from '../public/header_icons/pink_punk_black.svg';
@@ -18,11 +18,14 @@ import {useScrollPosition} from '../custom_hooks/useScrollPosition'
 type MainLayoutType = {
     children: React.ReactNode
     title: string
+    burger:boolean
+    setBurger: (burger:boolean) => void
+    nav:boolean
+    setNav: (nav:boolean) => void
 }
 
-export const MainLayout = ({children, title = 'Pink Punk'}: MainLayoutType) => {
-    const [nav, setNav] = useState(false)
-    const [burger, setBurger] = useState(false)
+export const MainLayout = ({children, title = 'Pink Punk',burger,setBurger,nav,setNav}: MainLayoutType) => {
+
     const scrollPosition = useScrollPosition();
 
 
@@ -30,8 +33,6 @@ export const MainLayout = ({children, title = 'Pink Punk'}: MainLayoutType) => {
         window.onwheel = (e) => {
             let scrollDirection = e.deltaY < 0
             scrollPosition > 200 && !scrollDirection ? setNav(true) : setNav(false)
-            console.log(scrollPosition > 50)
-            console.log(scrollDirection)
         }
     },[scrollPosition])
 
