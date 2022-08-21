@@ -1,8 +1,8 @@
 
-import {MainLayout} from '../components/MainLayout';
-import {GeneralLayout} from '../components/GeneralLayout';
+import {MainLayout} from '../components/Layouts/MainLayout';
+import {GeneralLayout} from '../components/Layouts/GeneralLayout';
 import {useState} from 'react';
-import {ShopPresentation} from '../components/ShopPresentation';
+import {ShopPresentation} from '../components/ShopSection/ShopPresentation';
 
 
 

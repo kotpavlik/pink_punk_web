@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import {MainLayout} from '../components/MainLayout';
+import {MainLayout} from '../components/Layouts/MainLayout';
 import style from '../styles/error404.module.scss'
 
 const Custom404 = () => {

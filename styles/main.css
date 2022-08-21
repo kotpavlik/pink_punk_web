@@ -112,3 +112,6 @@ code {
 ::-webkit-scrollbar {
     width: 0;
 }
+.swiper-button-prev, .swiper-rtl, .swiper-button-next{
+    color: #000 !important;
+}
