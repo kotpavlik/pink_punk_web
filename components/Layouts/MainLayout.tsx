@@ -32,7 +32,7 @@ export const MainLayout = ({children, title = 'Pink Punk',burger,setBurger,nav,s
     useEffect(() => {
         window.onwheel = (e) => {
             let scrollDirection = e.deltaY < 0
-            scrollPosition > 200 && !scrollDirection ? setNav(true) : setNav(false)
+            scrollPosition > 100 && !scrollDirection  ? setNav(true) : setNav(false)
         }
     },[scrollPosition])
 

@@ -29,6 +29,9 @@ import t_shirt_2 from '../../../public/clothes_photo/t-shirts/t_shirt_2.jpg'
 import hoodie_sheep_2 from '../../../public/clothes_photo/hoodie_sheep/hoodie_sheep_2.jpg'
 
 
+type SwiperClothesProps = {
+    setNav: (nav:boolean) => void
+}
 type ClothesTypes = Array<ClothesType>
 type ClothesType = {
     id: string
@@ -99,7 +102,7 @@ const Clothes: ClothesTypes = [
     },
     {
         id: '4',
-        name: 'плащь',
+        name: 'плащ',
         clothes_photo: [coat_1, coat_2],
         like: false,
         price: 250,
@@ -156,7 +159,7 @@ const Clothes: ClothesTypes = [
 ]
 
 
-export const SwiperClothes = () => {
+export const SwiperClothes = ({setNav}:SwiperClothesProps) => {
 
     const [wish, setWish] = useState<ClothesTypes>(Clothes)
     const [hover_item, setHover_item] = useState<string>('q')
@@ -167,6 +170,9 @@ export const SwiperClothes = () => {
     }
     const changeHoverItem = (id: string) => {
         setHover_item(id)
+    }
+    const changeNav = () => {
+        setNav(false)
     }
 
     return (
@@ -184,9 +190,11 @@ export const SwiperClothes = () => {
             {wish.map((el) => {
                 return (
                     <SwiperSlide key={el.id} className={style.swiper_slide}
-                                 onMouseOver={() => changeHoverItem(el.id)} onMouseLeave={() => changeHoverItem('t')}>
+                                 onMouseOver={() => changeHoverItem(el.id)}
+                                 onMouseLeave={() => changeHoverItem('t')}
+                                 onClick={changeNav}>
                         <div className={style.item_image}>
-                            <Link href={'/'}>
+                            <Link href={'/'} >
                                 <a>
                                     {hover_item === el.id ?
                                         <Image

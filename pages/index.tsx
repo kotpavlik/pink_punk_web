@@ -15,7 +15,7 @@ const Index = () => {
     return (
         <MainLayout title={'Pink Punk'} burger={burger} setBurger={setBurger} nav={nav} setNav={setNav}>
             <GeneralLayout/>
-            <ShopPresentation/>
+            <ShopPresentation setNav={setNav}/>
         </MainLayout>
     )
 }
