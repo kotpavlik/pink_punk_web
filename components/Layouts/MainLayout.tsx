@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
 import style from '../../styles/mainLayout.module.scss'
+import {ReactSVG} from 'react-svg'
 import {Navigation} from './Navigation';
 import Image from 'next/image';
 import searchLogo from '../../public/header_icons/search.svg';
@@ -18,13 +19,13 @@ import {useScrollPosition} from '../../custom_hooks/useScrollPosition'
 type MainLayoutType = {
     children: React.ReactNode
     title: string
-    burger:boolean
-    setBurger: (burger:boolean) => void
-    nav:boolean
-    setNav: (nav:boolean) => void
+    burger: boolean
+    setBurger: (burger: boolean) => void
+    nav: boolean
+    setNav: (nav: boolean) => void
 }
 
-export const MainLayout = ({children, title = 'Pink Punk',burger,setBurger,nav,setNav}: MainLayoutType) => {
+export const MainLayout = ({children, title = 'Pink Punk', burger, setBurger, nav, setNav}: MainLayoutType) => {
 
     const scrollPosition = useScrollPosition();
 
@@ -32,10 +33,9 @@ export const MainLayout = ({children, title = 'Pink Punk',burger,setBurger,nav,s
     useEffect(() => {
         window.onwheel = (e) => {
             let scrollDirection = e.deltaY < 0
-            scrollPosition > 100 && !scrollDirection  ? setNav(true) : setNav(false)
+            scrollPosition > 100 && !scrollDirection ? setNav(true) : setNav(false)
         }
-    },[scrollPosition])
-
+    }, [scrollPosition])
 
 
     const changeBurger = () => {
@@ -57,31 +57,29 @@ export const MainLayout = ({children, title = 'Pink Punk',burger,setBurger,nav,s
             </Head>
             <div className={nav ? `${style.header} ${style.active}` : style.header}>
                 <span className={burger ? `${style.portfolio} ${style.burger_on}` : style.portfolio}>
-                         <div className={style.wrapper_logo_pink_punk}><Link href={'/'}>
-                        <a>
-                            <div className={style.logo_pink_punk}>
-                                { burger
-                                    ? <Image src={pink_punk_white} width={150} height={50}></Image>
-                                    : <Image src={pink_punk_black} width={150} height={50}></Image>}
-                            </div>
-                        </a>
-                    </Link></div>
+                         <div className={style.wrapper_logo_pink_punk}>
+                             <Link href={'/'}>
+                                <a>
+                                     <div className={style.logo_pink_punk}>
+                                            <ReactSVG src={pink_punk_black.src}
+                                              className={burger ? style.logo_svg_white : style.logo_svg}/>
+                                     </div>
+                                </a>
+                             </Link>
+                         </div>
                 </span>
-                <div className={burger ? `${style.portfolio} ${style.burger_on}` : style.portfolio}>
+                <div className={burger ? `${style.icons} ${style.burger_on}` : style.icons}>
                     <Link href={'/search'}><a>
-                        { burger
-                            ? <Image src={searchLogoWhite} width={25} height={25}></Image>
-                            : <Image src={searchLogo} width={25} height={25}></Image>}
+                        <ReactSVG src={searchLogo.src}
+                                  className={burger ? style.icon_svg_white : style.icon_svg}/>
                     </a></Link>
                     <Link href={'/user'}><a>
-                        { burger
-                            ? <Image src={userLogoWhite} width={25} height={25}></Image>
-                            : <Image src={userLogo} width={25} height={25}></Image>}
+                        <ReactSVG src={userLogo.src}
+                                  className={burger ? style.icon_svg_white : style.icon_svg}/>
                     </a></Link>
                     <Link href={'/basket'}><a>
-                        { burger
-                            ? <Image src={shopping_basket_white} width={25} height={25}></Image>
-                            : <Image src={shopping_basket} width={25} height={25}></Image>}
+                        <ReactSVG src={shopping_basket.src}
+                                  className={burger ? style.icon_svg_white : style.icon_svg}/>
                     </a></Link>
                 </div>
                 <div className={burger ? `${style.header_burger} ${style.burger_on}` : style.header_burger}
@@ -90,7 +88,7 @@ export const MainLayout = ({children, title = 'Pink Punk',burger,setBurger,nav,s
                      }}>
                     <span></span>
                 </div>
-                <div className={burger  ? `${style.wrapper} ${style.wrapper_on}` : style.wrapper}>
+                <div className={burger ? `${style.wrapper} ${style.wrapper_on}` : style.wrapper}>
                     <Navigation burger={burger} setBurger={setBurger} nav={nav}/>
                 </div>
             </div>

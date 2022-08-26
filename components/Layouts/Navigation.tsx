@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image'
+import { ReactSVG } from 'react-svg'
 import style from '../../styles/navigation.module.scss'
 import searchLogo from '../../public/header_icons/search.svg'
 import userLogo from '../../public/header_icons/user.svg'
@@ -14,7 +14,7 @@ type NavigationPropsType = {
     nav:boolean
 }
 
-export const Navigation = ({burger, setBurger,nav}: NavigationPropsType) => {
+export const Navigation = ({burger, setBurger}: NavigationPropsType) => {
 
     const closeBurger = () => {
         setBurger(!burger)
@@ -28,7 +28,7 @@ export const Navigation = ({burger, setBurger,nav}: NavigationPropsType) => {
                     <Link href={'/'}>
                         <a onClick={closeBurger}>
                             <div className={style.logo_pink_punk}>
-                                <Image src={pink_punk_black} width={100} height={30}></Image>
+                                <ReactSVG src={pink_punk_black.src} className={style.logo_svg}/>
                             </div>
                         </a>
                     </Link>
@@ -49,16 +49,16 @@ export const Navigation = ({burger, setBurger,nav}: NavigationPropsType) => {
             <div className={style.navigate_user}>
                 <Link href={'/language'}><a onClick={closeBurger}>ru</a></Link>
                 <Link href={'/search'}><a onClick={closeBurger}>
-                    <Image src={searchLogo} width={20} height={20}></Image>
+                    <ReactSVG src={searchLogo.src} className={style.icon_svg}/>
                 </a></Link>
                 <Link href={'/user'}><a onClick={closeBurger}>
-                        <Image src={userLogo} width={20} height={20}></Image>
+                        <ReactSVG src={userLogo.src} className={style.icon_svg}/>
                 </a></Link>
                 <Link href={'/basket'}><a onClick={closeBurger}>
-                        <Image src={shopping_basket} width={20} height={20}></Image>
+                        <ReactSVG src={shopping_basket.src} className={style.icon_svg}/>
                 </a></Link>
                 <Link href={'/like'}><a onClick={closeBurger}>
-                    <Image src={heart_like} width={20} height={20}></Image>
+                    <ReactSVG src={heart_like.src} className={style.icon_svg}/>
                 </a></Link>
             </div>
         </nav>

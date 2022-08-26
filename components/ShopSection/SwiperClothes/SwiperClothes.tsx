@@ -63,6 +63,7 @@ export const SwiperClothes = ({setNav,Clothes}:SwiperClothesProps) => {
                                             layout="fill"
                                             src={el.clothes_photo[1]}
                                             alt={el.name}
+                                            priority={true}
                                             className={style.clothes_photo}
                                         />
                                         :
@@ -71,6 +72,7 @@ export const SwiperClothes = ({setNav,Clothes}:SwiperClothesProps) => {
                                             layout="fill"
                                             src={el.clothes_photo[0]}
                                             alt={el.name}
+                                            priority={true}
                                             className={style.clothes_photo}
                                         />
                                     }

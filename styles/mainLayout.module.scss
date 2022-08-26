@@ -1,5 +1,4 @@
 
-
 .header {
   height: 80px;
   display: flex;
@@ -14,22 +13,17 @@
   z-index: 999;
 
 }
-
-.active{
-    opacity: 0;
+.active {
+  opacity: 0;
 }
-
-
-
 .header .portfolio {
   display: none;
 }
-
 .header_burger {
   display: none;
 }
 
-@media screen and ( max-width: 800px) {
+@media screen and (max-width: 800px) {
   .wrapper {
     position: absolute;
     transform: translate(-30%, -50%);
@@ -43,37 +37,78 @@
     padding: 0 0 0 20px;
     text-transform: uppercase;
     font-size: 30px;
-    a{
-      margin: 10px;
-    }
-    .wrapper_logo_pink_punk{
+    .wrapper_logo_pink_punk {
       position: relative;
       min-width: 160px;
       min-height: 40px;
-      a{
-        .logo_pink_punk{
+
+      a {
+        .logo_pink_punk {
           position: absolute;
           top: 0px;
+          .logo_svg {
+            svg {
+              width: 200px;
+              height: 60px;
+            }
+          }
+          .logo_svg_white {
+            margin: 0 10px;
+            svg {
+              width: 200px;
+              height: 60px;
+              path {
+                fill: white;
+              }
+            }
+          }
         }
       }
     }
-
   }
-
   .header {
     width: 100%;
     justify-content: space-between;
+    .icons{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      a {
+        margin: 10px;
+
+        .icon_svg{
+          svg {
+            width: 40px;
+            height: 40px;
+          }
+        }
+        .icon_svg_white{
+          svg {
+            width: 40px;
+            height: 40px;
+            circle {
+              stroke: white;
+            }
+            line {
+              stroke: white;
+            }
+            path {
+              stroke:white;
+            }
+          }
+        }
+      }
+    }
   }
 
   .header_burger {
     display: block;
     position: relative;
     left: -20px;
-    width: 30px;
+    width: 40px;
     height: 20px;
     z-index: 2;
   }
-
   .header_burger::before,
   .header_burger::after {
     content: "";
@@ -81,24 +116,21 @@
     position: absolute;
     left: 0px;
     width: 100%;
-    height: 2px;
+    height: 3px;
     transition: all 0.2s;
   }
-
   .header_burger::before {
-    top: 0;
+    top: -2px;
   }
-
   .header_burger::after {
-    bottom: 0;
+    bottom: -2px;
   }
-
   .header_burger span {
     position: absolute;
     background-color: black;
     left: 0px;
     width: 100%;
-    height: 2px;
+    height: 3px;
     top: 9px;
     transition: all 0.2s;
 
@@ -123,9 +155,7 @@
     transform: rotate(45deg);
     bottom: 9px;
     transition: all 0.2s;
-
   }
-
   .burger_on::before {
     background-color: #fff;
     transform: rotate(-45deg);
@@ -142,20 +172,54 @@
   }
 }
 
-@media screen and ( max-width: 420px) {
+@media screen and (max-width: 480px) {
   .header {
     width: 100%;
     justify-content: space-between;
+    .icons{
+      a {
+        margin: 10px;
+        .icon_svg{
+          svg {
+            width: 30px;
+            height: 30px;
+          }
+        }
+        .icon_svg_white{
+          svg {
+            width: 30px;
+            height: 30px;
+          }
+        }
+      }
+    }
   }
   .header .portfolio {
     display: block;
     text-align: right;
-    padding:  0 10px;
-    text-transform: uppercase;
+    padding: 0 10px;
     font-size: 30px;
-    a{
-      margin: 5px;
+    .wrapper_logo_pink_punk {
+      min-width: 100px;
+      min-height: 40px;
+      a {
+        .logo_pink_punk {
+          .logo_svg {
+            svg {
+              width: 130px;
+              height: 40px;
+            }
+          }
+          .logo_svg_white {
+            margin: 0 10px;
+
+            svg {
+              width: 130px;
+              height: 40px;
+            }
+          }
+        }
+      }
     }
   }
-
 }
