@@ -4,14 +4,9 @@ import Head from 'next/head';
 import style from '../../styles/mainLayout.module.scss'
 import {ReactSVG} from 'react-svg'
 import {Navigation} from './Navigation';
-import Image from 'next/image';
 import searchLogo from '../../public/header_icons/search.svg';
-import searchLogoWhite from '../../public/header_icons/search_white.svg'
 import userLogo from '../../public/header_icons/user.svg';
-import userLogoWhite from '../../public/header_icons/user_white.svg'
 import shopping_basket from '../../public/header_icons/basket.svg';
-import shopping_basket_white from '../../public/header_icons/basket_white.svg'
-import pink_punk_white from '../../public/header_icons/pink_punk_white.svg';
 import pink_punk_black from '../../public/header_icons/pink_punk_black.svg';
 import {useScrollPosition} from '../../custom_hooks/useScrollPosition'
 

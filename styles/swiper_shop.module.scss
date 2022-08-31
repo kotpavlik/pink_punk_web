@@ -1,15 +1,43 @@
-.mySwiper{
+.mySwiper {
   min-height: 600px;
   height: 80%;
   margin: 0 5px;
-  .swiper_slide{
+
+  .swiper_slide {
     position: relative;
-    .item_image{
-      .clothes_photo{
+
+    .item_image {
+      .clothes_photo {
         object-position: bottom center;
+        animation: photo .5s forwards;
+      }
+
+      @keyframes photo {
+        0% {
+          opacity: 0.8;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      .clothes_photo_2 {
+        object-position: bottom center;
+        animation: photo2 .5s forwards;
+      }
+
+      @keyframes photo2 {
+        0% {
+          opacity: 0.8;
+        }
+        100% {
+          opacity: 1;
+        }
       }
     }
-    .inform_item_wrapper{
+
+
+    .inform_item_wrapper {
       position: absolute;
       top: 20px;
       left: 15px;
@@ -18,20 +46,23 @@
       cursor: pointer;
       text-transform: uppercase;
       z-index: 3;
-      .item_name{
+
+      .item_name {
         font-size: 2.5rem;
         font-weight: 700;
         color: rgba(0, 0, 0, 0);
-        -webkit-text-stroke:0.5px black;
+        -webkit-text-stroke: 0.5px black;
 
       }
+
       .item_color {
         color: rgba(0, 0, 0, 0.5);
         font-size: 1rem;
         margin: 5px 0;
       }
     }
-    .item_cost{
+
+    .item_cost {
       position: absolute;
       left: 15px;
       bottom: 20px;
@@ -41,19 +72,58 @@
       font-weight: 700;
       z-index: 3;
       color: rgba(0, 0, 0, 0);
-      -webkit-text-stroke:0.5px black;
+      -webkit-text-stroke: 0.5px black;
       border: 0.5px solid black;
       padding: 5px;
       transition: all 0.5s;
-      &:hover{
+
+      &:hover {
         color: pink;
-        -webkit-text-stroke:0.5px pink;
+        -webkit-text-stroke: 0.5px pink;
         box-shadow: 6px 6px 1px black;
-        transform:scale(1.1);
         transition: all 0.5s;
       }
     }
-    .item_like{
+
+    .go_basket {
+      position: absolute;
+      left: 15px;
+      bottom: 80px;
+      cursor: pointer;
+      text-transform: uppercase;
+      font-size: 2.5rem;
+      font-weight: 700;
+      z-index: 3;
+      color: rgba(0, 0, 0, 0);
+      -webkit-text-stroke: 0.5px black;
+      border: 0.5px solid black;
+      padding: 5px;
+      transform: translateX(-150%);
+      animation: ani 0.5s forwards;
+      transition: all 0.5s;
+
+      &:hover {
+        color: pink;
+        -webkit-text-stroke: 0.5px pink;
+        box-shadow: 6px 6px 1px black;
+        transition: all 0.5s;
+      }
+    }
+
+    @keyframes ani {
+      0% {
+        transform: translateX(-5%);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    .go_basket_none {
+      display: none;
+    }
+
+    .item_like {
       position: absolute;
       top: 20px;
       right: 20px;
@@ -61,6 +131,42 @@
       max-height: 20px;
       cursor: pointer;
       z-index: 10;
+
+      .icon_svg {
+        svg {
+          width: 20px;
+          height: 20px;
+          transition: all 0.5s;
+
+          &:hover {
+            transform: scale(1.2);
+            transition: all 0.5s;
+          }
+
+          &:active {
+            transform: scale(0.9);
+            transition: all 0.5s;
+          }
+        }
+      }
+
+      .icon_svg_active {
+        svg {
+          width: 20px;
+          height: 20px;
+          transition: all 0.5s;
+
+          path {
+            stroke: red;
+            fill: red;
+          }
+
+          &:hover {
+            transform: scale(1.2);
+            transition: all 0.5s;
+          }
+        }
+      }
     }
   }
 }

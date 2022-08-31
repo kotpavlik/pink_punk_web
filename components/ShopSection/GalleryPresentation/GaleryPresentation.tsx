@@ -4,6 +4,9 @@ import { useAnimation, motion } from "framer-motion"
 import bg_photo from "../../../public/bg_images/bg_photo.jpg"
 import style from "../../../styles/galleryPresentation.module.scss"
 import {ClothesTypes} from '../ShopPresentation';
+import {IoLogoInstagram, SiTelegram} from 'react-icons/all';
+
+
 
 type GalleryPresentationProsType = {
     Clothes:ClothesTypes
@@ -34,11 +37,15 @@ export const GalleryPresentation = ({Clothes}:GalleryPresentationProsType) => {
                     onMouseMove={(e: MouseEvent<HTMLDivElement, Event>) => handleMouseMove(e)}
                     className={style.motion_div}
                 >
-                    BLR BRAND
+                    pink punk
                 </motion.div>
                 <div className={style.img_bg} style={bg_div_style}>
                     <div className={style.about_brand_container}>
-                        Беларуский бренд про крутые шмотки, кайфовых людей и крутой вайб.
+                        <div className={style.social_icon}> <IoLogoInstagram/> </div>
+                        <div className={style.social_icon}><SiTelegram/></div>
+                        <div className={style.social_icon}></div>
+                        <div className={style.social_icon}></div>
+                        <div className={style.social_icon}></div>
                     </div>
                 </div>
             </div>
