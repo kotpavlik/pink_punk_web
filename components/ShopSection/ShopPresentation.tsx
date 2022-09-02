@@ -157,7 +157,7 @@ export const ShopPresentation = ({setNav}: ShopPresentationProps) => {
             </div>
             <div className={style.swiper_wrapper}>
                 <SwiperClothes setNav={setNav} Clothes={Clothes}/>
-                <GalleryPresentation Clothes={Clothes}/>
+
             </div>
         </div>
     );

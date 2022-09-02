@@ -1,8 +1,9 @@
  @import "mixins_app/mixins";
 
-.container {
+.footer_container {
   position: relative;
-  height: 70vh;
+  height: 100vh;
+  min-height: 600px ;
   width: 100vw;
   display: flex;
   justify-content: center;
@@ -10,26 +11,30 @@
   margin: 2px 0;
 
   .motion_div {
+    position: absolute;
+    top: 20%;
     color: rgba(0, 0, 0, 0);
     -webkit-text-stroke:0.5px black;
     font-size: 15rem;
     font-weight: 1000;
     text-transform: uppercase;
     cursor: pointer;
-    display: flex;
-    justify-content: center;
     align-items: center;
     transition: all 1s;
+
+
     &:hover{
       color: pink;
       -webkit-text-stroke:0.5px pink;
       transition: all 1s;
+      z-index:5;
     }
     &:active{
       color: rgba(0, 0, 0, 0);
       -webkit-text-stroke:0.5px black;
     }
   }
+
   .img_bg {
     z-index: -1;
     position: absolute;
@@ -45,13 +50,35 @@
       position: absolute;
       left:0px;
       bottom:0px;
+      min-height: 200px;
       width: 100vw;
-      height: 10vh;
-      background-color: rgba(255, 192, 203, 0.5);
+      height: 25vh;
+      background-color: rgb(255, 255, 255);
       display: flex;
       flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
+      justify-content: space-around;
+      .social_icon_wrapper{
+        display: flex;
+        flex-direction: row;
+        .social_icon{
+          position: relative;
+          text-align: center;
+          width: 50px;
+          height: 50px;
+          font-size: 2rem;
+          margin:auto 20px;
+          -webkit-border-radius: 50px;
+          -moz-border-radius: 50px;
+          border-radius: 50px;
+          background: pink;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+      .information {
+        text-transform: uppercase;
+      }
     }
   }
 }
