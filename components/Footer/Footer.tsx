@@ -3,10 +3,11 @@ import { MouseEvent } from 'react';
 import { useAnimation, motion } from "framer-motion"
 import bg_photo from "../../public/bg_images/bg_photo.jpg"
 import style from "../../styles/footer.module.scss"
-import {IoLogoInstagram} from 'react-icons/io';
+import {RiInstagramLine} from 'react-icons/ri';
 import {TbBrandTelegram} from 'react-icons/tb';
-import {AiOutlinePhone} from 'react-icons/ai';
+import {TbPhone} from 'react-icons/tb';
 import {FiMail} from 'react-icons/fi';
+import Link from 'next/link';
 
 
 
@@ -40,16 +41,38 @@ export const Footer = () => {
                 pink punk
             </motion.div>
             <div className={style.img_bg} style={bg_div_style}>
-                <div className={style.about_brand_container}>
-                    <div className={style.information}>
-                        Адрес : г.Минск ул.Шорная 20 H1 (внутри коворкинга "Кто такой Джон Голт" )
-                    </div>
+            </div>
+            <div className={style.about_brand_container}>
+                <div className={style.information}>
+                    <div className={style.title}>Покупателям</div>
+                    <div className={style.item_info}>Адрес : г.Минск ул.Шорная 20 H1</div>
+                    <div className={style.item_info}>режим работы шоурума : 11 - 19 ежедневно</div>
+                    <div className={style.item_info}>телефон : +375(33)916-47-30</div>
+                </div>
+                <div className={style.link_wrapper}>
+                    <div className={style.title}>Инфо</div>
+                    <div className={style.link}><Link href={'/delivery'}><a>доставка</a></Link></div>
+                    <div className={style.link}><Link href={'/news'}><a>новости</a></Link></div>
+                    <div className={style.link}><Link href={'/about'}><a>о нас</a></Link></div>
+                </div>
+
+                <div className={style.wrapper_socials}>
+                    <div className={style.title}>соцсети</div>
                     <div className={style.social_icon_wrapper}>
-                        <div className={style.social_icon}><IoLogoInstagram/></div>
-                        <div className={style.social_icon}><TbBrandTelegram/></div>
-                        <div className={style.social_icon}><AiOutlinePhone/></div>
-                        <div className={style.social_icon}><FiMail/></div>
-                        <div className={style.social_icon}></div>
+                        <a href={'https://www.instagram.com/pinkpunk_brand/'}>
+                            <div className={style.social_icon}>
+                                <RiInstagramLine/>
+                            </div>
+                        </a>
+                        <a href={'https://t.me/pink_punk_brand'}>
+                            <div className={style.social_icon}><TbBrandTelegram/></div>
+                        </a>
+                        <a href={'tel:+375339164730'}>
+                            <div className={style.social_icon}><TbPhone/></div>
+                        </a>
+                        <a href={'mailto:pinkpunk.company@gmail.com'}>
+                            <div className={style.social_icon}><FiMail/></div>
+                        </a>
                     </div>
                 </div>
             </div>
