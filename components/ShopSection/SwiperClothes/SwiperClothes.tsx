@@ -44,8 +44,10 @@ export const SwiperClothes = ({setNav, Clothes}: SwiperClothesProps) => {
             return 1
         } else if(windowSize.width && windowSize.width < 600) {
             return 2
-        } else {
+        } else if(windowSize.width && windowSize.width < 1200){
             return 3
+        } else {
+            return 5
         }
     }
 

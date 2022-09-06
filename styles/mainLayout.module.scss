@@ -5,11 +5,11 @@
   justify-content: flex-end;
   align-items: center;
   position: fixed;
-  background-color: transparent;
   top: 0px;
   opacity: 1;
   transition-duration: 0.8s;
   text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.8);
   z-index: 999;
 
 }

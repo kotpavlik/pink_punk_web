@@ -45,9 +45,15 @@ export const Footer = () => {
             <div className={style.about_brand_container}>
                 <div className={style.information}>
                     <div className={style.title}>Покупателям</div>
-                    <div className={style.item_info}>Адрес : г.Минск ул.Шорная 20 H1</div>
-                    <div className={style.item_info}>режим работы шоурума : 11 - 19 ежедневно</div>
-                    <div className={style.item_info}>телефон : +375(33)916-47-30</div>
+                    <div className={style.item_info}>Адрес :
+                        <span className={style.info_text}>г.Минск ул.Шорная 20 H1</span>
+                    </div>
+                    <div className={style.item_info}>режим работы шоурума :
+                        <span className={style.info_text}>11:00 - 19:00 ежедневно</span>
+                    </div>
+                    <div className={style.item_info}>телефон :
+                        <span className={style.info_text}>+375(33)916-47-30</span>
+                    </div>
                 </div>
                 <div className={style.link_wrapper}>
                     <div className={style.title}>Инфо</div>
