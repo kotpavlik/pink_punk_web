@@ -13,11 +13,11 @@ import {useScrollPosition} from '../../custom_hooks/useScrollPosition'
 
 type MainLayoutType = {
     children: React.ReactNode
-    title: string
-    burger: boolean
-    setBurger: (burger: boolean) => void
-    nav: boolean
-    setNav: (nav: boolean) => void
+    title?: string
+    burger?: boolean
+    setBurger?: (burger: boolean) => void
+    nav?: boolean
+    setNav?: (nav: boolean) => void
 }
 
 export const MainLayout = ({children, title = 'Pink Punk', burger, setBurger, nav, setNav}: MainLayoutType) => {
@@ -28,13 +28,13 @@ export const MainLayout = ({children, title = 'Pink Punk', burger, setBurger, na
     useEffect(() => {
         window.onwheel = (e) => {
             let scrollDirection = e.deltaY < 0
-            scrollPosition > 100 && !scrollDirection ? setNav(true) : setNav(false)
+            scrollPosition > 100 && !scrollDirection ? setNav && setNav(true) : setNav && setNav(false)
         }
     }, [scrollPosition])
 
 
     const changeBurger = () => {
-        setBurger(!burger)
+        setBurger && setBurger(!burger)
     }
 
     return (
@@ -84,7 +84,7 @@ export const MainLayout = ({children, title = 'Pink Punk', burger, setBurger, na
                     <span></span>
                 </div>
                 <div className={burger ? `${style.wrapper} ${style.wrapper_on}` : style.wrapper}>
-                    <Navigation burger={burger} setBurger={setBurger} nav={nav}/>
+                    <Navigation  burger={burger} setBurger={setBurger} nav={nav}/>
                 </div>
             </div>
             <main>

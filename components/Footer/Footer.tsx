@@ -82,6 +82,7 @@ export const Footer = () => {
                     </div>
                 </div>
             </div>
+            <div className={style.since}> since 2020 </div>
         </div>
     )
 }

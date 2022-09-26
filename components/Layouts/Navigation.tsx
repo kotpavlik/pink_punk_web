@@ -9,15 +9,15 @@ import heart_like from '../../public/header_icons/heart.svg'
 import pink_punk_black from '../../public/header_icons/pink_punk_black.svg'
 
 type NavigationPropsType = {
-    burger: boolean
-    setBurger: (burger: boolean) => void
-    nav:boolean
+    burger?: boolean
+    setBurger?: (burger: boolean) => void
+    nav?:boolean
 }
 
 export const Navigation = ({burger, setBurger}: NavigationPropsType) => {
 
     const closeBurger = () => {
-        setBurger(!burger)
+        setBurger && setBurger(!burger)
     }
 
     return (

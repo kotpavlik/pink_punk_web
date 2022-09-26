@@ -17,6 +17,7 @@ const Index = () => {
         <MainLayout title={'Pink Punk'} burger={burger} setBurger={setBurger} nav={nav} setNav={setNav}>
             <GeneralLayout/>
             <ShopPresentation setNav={setNav}/>
+
             <Footer/>
         </MainLayout>
     )
